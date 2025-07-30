@@ -28,6 +28,8 @@ touch .editorconfig
 
 ### eslint configuration
 
+- package.json
+
 ```json
 {
     "script": {
@@ -42,4 +44,92 @@ touch .editorconfig
         "eslint-plugin-simple-import-sort": "12.1.1"
     }
 }
+```
+
+- eslint.config.js
+
+```bash
+# see detail file at current folder
+
+```
+
+### stylelint configuation
+
+```json
+{
+    "script": {
+        "lint:style": "stylelint \"{packages,apps}/**/*.{scss,css,vue}\" --fix"
+    },
+    "devDependies": {
+        "stylelint": "16.14.1",
+        "stylelint-config-standard": "37.0.0",
+        "stylelint-config-standard-vue": "1.0.0"
+    }
+}
+```
+
+### cspell
+
+- package.json
+
+```json
+{
+    "script": {
+        "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md|vue)\""
+    },
+    "devDependies": {
+        "cspell": "8.17.3"
+    }
+}
+```
+
+- cspell.json
+
+```bash
+# see detail file at current folder
+```
+
+- .cspell/custom-words.txt
+
+### commitlint
+
+- package.json
+
+```json
+{
+    "script": {
+        "commit": "git-cz"
+    },
+    "config": {
+        "commitlint": {
+            "path": "node_modules/cz-git"
+        }
+    },
+    "devPendencies": {
+        "@commitlint/cli": "19.7.1",
+        "@commitlint/config-conventional": "19.7.1",
+        "commitizen": "4.3.1",
+        "cz-git": "1.11.0",
+        "husky": "9.1.7"
+    }
+}
+```
+
+- commitlint.config.js
+
+```bash
+# see detail file at current folder
+```
+
+- husky
+
+```bash
+npx husky init
+```
+
+.husky/pre-commit
+
+```bash
+#!/usr/bin/env node
+pnpm lint && pnpm spellcheck
 ```
