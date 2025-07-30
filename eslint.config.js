@@ -19,6 +19,7 @@ export default [
         rules: {
             ...js.configs.recommended.rules,
             ...pluginVue.configs['vue3-strongly-recommended'].rules,
+            indent: ['error', 2],
             'prefer-const': 'error',
             'no-console': 'error',
             'vue/valid-define-emits': 'error',
