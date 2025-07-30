@@ -19,6 +19,8 @@ export default [
     rules: {
       ...js.configs.recommended.rules,
       ...pluginVue.configs['vue3-strongly-recommended'].rules,
+      'vue/singleline-html-element-content-newline': 'off',
+      'vue/html-self-closing': 'off',
       'prefer-const': 'error',
       'no-console': 'error',
       'vue/valid-define-emits': 'error',
